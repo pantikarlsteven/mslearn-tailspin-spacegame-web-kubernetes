@@ -7,6 +7,7 @@ variables:
   webRepository: 'web'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'secret'
+  registryName: 'tailspinspacegame9639.azurecr.io'
 
 stages:
 - stage: 'Build'
@@ -84,5 +85,5 @@ stages:
               imagePullSecrets: |
                 $(imagePullSecret)
               containers: |
-                $(RegistryName)/$(webRepository):$(tag)
-                $(RegistryName)/$(leaderboardRepository):$(tag)
+                $(registryName)/$(webRepository):$(tag)
+                $(registryName)/$(leaderboardRepository):$(tag)
